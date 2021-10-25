@@ -1,11 +1,32 @@
 import React from 'react'
-import { View, Text } from 'react-native';
+import { View, Text, SafeAreaView, TextInput, FlatList } from 'react-native';
+
+import styles from './Style'
+import products_data from './data.json'
+
+
 
 const PatikaShop = () => {
     return (
-        <View>
-            <Text>Patika Shop</Text>
-        </View>
+        <SafeAreaView style={styles.container}>
+            <View>
+                <Text style={styles.main_title}>Patika Shop</Text>
+                <TextInput
+                style={styles.input}
+                    placeholder="Patika Shop"
+                />
+            </View>
+
+            <FlatList
+
+                data={products_data}
+                renderItem={({item})=> {
+                    return (<Text>{item.title}</Text>)
+                }}
+
+            />
+
+        </SafeAreaView>
     )
 }
 
