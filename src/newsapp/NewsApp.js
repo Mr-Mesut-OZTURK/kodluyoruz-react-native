@@ -31,7 +31,7 @@ const NewsApp = () => {
 
                 keyExtractor={item =>item.u_id.toString()}
                 data={news_data}
-                renderItem={({item,index})=>(<Card key={index} data={item}/>)}
+                renderItem={({item})=>(<Card data={item}/>)}
             />
             
          
