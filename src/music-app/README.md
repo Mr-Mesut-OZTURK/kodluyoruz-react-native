@@ -1,3 +1,3 @@
-# News App
+# Music App
 
-![news app](./assets/music-app.gif)
+![music app](./assets/music-app.gif)
