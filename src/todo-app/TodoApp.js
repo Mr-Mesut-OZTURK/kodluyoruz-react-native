@@ -1,28 +1,69 @@
 import React, { useState, useEffect } from 'react'
 import { SafeAreaView, View, Text, StyleSheet, Dimensions, FlatList } from 'react-native'
 
-import Card from './card/Card'
+import Card from './Card';
+import AddTodo from "./AddTodo";
 
 
 const TodoApp = () => {
 
-    const [list, setList] = useState([])
+    const [text, setText] = useState("");
+    const [list, setList] = useState(["Duygularım darmadağın..."])
 
-    const showList = ({item}) => {
-        return (<Card/>)
+    const handleLongPress = (todo) => {
+        let newList = list.slice(0)
+        console.log(newList)
+        const index = newList.indexOf(todo);
+        
+        if (index > -1) {
+            newList.splice(index, 1);
+            console.log(newList)
+            setList(newList)
+        }
     }
+
+    const showList = ({ item }) => {
+        return (<Card
+            todo={item}
+            handleLongPress={handleLongPress}
+        />)
+    }
+
+    const addTodoItem = () => {
+        if(text !== "") {
+            setList([text, ...list])
+            setText("")
+        }else {
+            alert("Boş bırakmayınız!...")
+        }
+        
+    }
+
+
+
+
 
     return (
         <SafeAreaView style={styles.container}>
+
             <View style={styles.header}>
                 <Text style={styles.headerText}>Todo App</Text>
-                <Text style={styles.score}>0</Text>
+                <Text style={styles.score}>{list.length}</Text>
             </View>
 
             <FlatList
+                keyExtractor={(item, index) => index}
+                style={styles.list}
                 data={list}
                 renderItem={showList}
             />
+
+            <AddTodo
+                text={text}
+                setText={setText}
+                addTodoItem={addTodoItem}
+            />
+
         </SafeAreaView>
     )
 }
@@ -32,12 +73,13 @@ export default TodoApp
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#333',
+        backgroundColor: '#102027',
         padding: 10,
         paddingTop: 30,
+        paddingBottom: 50,
     },
     header: {
-        width: Dimensions.get('window').width-20,
+        width: Dimensions.get('window').width - 20,
         flexDirection: 'row',
         justifyContent: 'space-between',
     },
@@ -48,5 +90,10 @@ const styles = StyleSheet.create({
     score: {
         fontSize: 30,
         color: 'orange',
+    },
+    list: {
+        paddingTop: 30,
+        paddingBottom: 30,
+        // backgroundColor: 'yellow'
     }
 })
