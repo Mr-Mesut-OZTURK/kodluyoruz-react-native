@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { SafeAreaView, View, Text, StyleSheet, Dimensions, FlatList } from 'react-native'
 
-import Card from './Card';
-import AddTodo from "./AddTodo";
+import Card from './components/Card';
+import AddTodo from "./components/AddTodo";
 
 
 const TodoApp = () => {
@@ -12,12 +12,10 @@ const TodoApp = () => {
 
     const handleLongPress = (todo) => {
         let newList = list.slice(0)
-        console.log(newList)
         const index = newList.indexOf(todo);
         
         if (index > -1) {
             newList.splice(index, 1);
-            console.log(newList)
             setList(newList)
         }
     }

@@ -1,3 +1,3 @@
 # Music App
 
-![music app](./assets/music-app.gif)
+<img src="./assets/music-app.gif" height="200">

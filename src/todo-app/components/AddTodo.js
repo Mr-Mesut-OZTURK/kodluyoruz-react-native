@@ -23,7 +23,7 @@ const AddTodo = ({ text, setText, addTodoItem }) => {
                 style={styles.add_input}
                 value={text}
                 onChangeText={setText}
-                placeholder="Ara..."
+                placeholder="Add item..."
                 onFocus={handleFocus}
                 onBlur={handleBlur}
             />
