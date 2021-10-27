@@ -3,7 +3,8 @@ import { SafeAreaView } from "react-native"
 // import CardApp from './lesson-1(basic-card)/CardApp'
 // import NewsApp from "./newsapp/NewsApp"
 // import PatikaShop from "./patika-shop/PatikaShop"
-import MusicApp from "./music-app/MusicApp"
+// import MusicApp from "./music-app/MusicApp"
+import TodoApp from './todo-app/TodoApp'
 
 function App() {
 
@@ -13,7 +14,8 @@ function App() {
      {/* <CardApp/> */}
      {/* <NewsApp /> */}
      {/* <PatikaShop /> */}
-     <MusicApp />
+     {/* <MusicApp /> */}
+     <TodoApp />
 
     </>
   )
