@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { SafeAreaView, View, Text, StyleSheet, Dimensions, FlatList } from 'react-native'
 
+import Card from './card/Card'
+
+
 const TodoApp = () => {
 
     const [list, setList] = useState([])
 
     const showList = ({item}) => {
-        
+        return (<Card/>)
     }
 
     return (
