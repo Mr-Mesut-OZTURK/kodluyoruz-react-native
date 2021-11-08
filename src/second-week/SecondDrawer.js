@@ -4,6 +4,7 @@ import { View, Text, Button } from 'react-native';
 import FitnessAppRouter from './kebap-fitness-app/FitnessAppRouter'
 import FetchApiApp from './fetch-api-first/FetchApiApp'
 import DukkanRouter from './dukkan-app/DukkanRouter';
+import TarifkaRouter from './tarifka/TarifkaRouter'
 
 import { createDrawerNavigator } from '@react-navigation/drawer'
 const Drawer = createDrawerNavigator();
@@ -32,6 +33,7 @@ const SecondDrawer = () => {
             <Drawer.Screen name="Kebab Fitness" component={FitnessAppRouter} />
             <Drawer.Screen name="First FetchApiApp" component={FetchApiApp} />
             <Drawer.Screen name="DÜKKAN" component={DukkanRouter} />
+            <Drawer.Screen name="Tarifka" component={TarifkaRouter} />
         </Drawer.Navigator>
     )
 }
