@@ -15,6 +15,7 @@ const PatikaShop = () => {
             <Header/>
 
             <FlatList
+                style={{marginBottom: 120,}}
                 numColumns={2}
                 columnWrapperStyle={styles.row}
                 // horizontal
